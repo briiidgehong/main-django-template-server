@@ -27,8 +27,14 @@ INSTALLED_APPS = [
 ]
 urlpatterns = [
     ...
-    path('api-auth/', include('rest_framework.urls'))
+    path('admin/', admin.site.urls), # default setting
+    path('api-auth/', include('rest_framework.urls')) # add
 ]
+
+admin/
+api-auth/ login/ [name='login']
+api-auth/ logout/ [name='logout']
+
 ```
 
 ## add users app
