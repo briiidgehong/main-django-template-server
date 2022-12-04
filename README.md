@@ -9,6 +9,43 @@ djangorestframework==3.14.0
 drf-yasg==1.21.4
 ```
 
+## directory setting
+```
+project folder 안에 다음을 각각 위치시킨다.
+이에 맞게 settings.py도 project prefix를 제거해주어야 한다.('toy_project.urls' -> 'urls')
+- manage.py 
+- requirements.py
+
+.
+├── README.md
+├── db.sqlite3
+└── toy_project
+    ├── __init__.py
+    ├── asgi.py
+    ├── manage.py
+    ├── requirements.txt
+    ├── settings.py
+    ├── urls.py
+    ├── users
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-38.pyc
+    │   │   ├── admin.cpython-38.pyc
+    │   │   ├── apps.cpython-38.pyc
+    │   │   └── models.cpython-38.pyc
+    │   ├── admin.py
+    │   ├── apps.py
+    │   ├── migrations
+    │   │   ├── __init__.py
+    │   │   └── __pycache__
+    │   │       └── __init__.cpython-38.pyc
+    │   ├── models.py
+    │   ├── tests.py
+    │   └── views.py
+    └── wsgi.py
+
+```
+
 ## start project
 ```
 git clone https://github.com/briiidgehong/django-project.git
@@ -84,9 +121,7 @@ LOGOUT_URL = "rest_framework:logout"
 
 ## add users app (user-model-custom / using AbstractUser model)
 ```
-mkdir ./toy_project/users
-python manage.py startapp users ./toy_project/users
-
+python manage.py startapp users 
 # settings.py
 INSTALLED_APPS = [
     'users',
