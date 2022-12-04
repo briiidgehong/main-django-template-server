@@ -82,8 +82,13 @@ LOGOUT_URL = "rest_framework:logout"
 ```
 
 
-## add users app
+## add users app (user-model-custom / using AbstractUser model)
 ```
 mkdir ./toy_project/users
 python manage.py startapp users ./toy_project/users
+
+# add models.py sourcecode
+# add views.py sourcecode
+# add users.urls.py sourcecode
+# add urls.py sourcecode
 ```
