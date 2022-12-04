@@ -28,17 +28,10 @@ project folder 안에 다음을 각각 위치시킨다.
     ├── urls.py
     ├── users
     │   ├── __init__.py
-    │   ├── __pycache__
-    │   │   ├── __init__.cpython-38.pyc
-    │   │   ├── admin.cpython-38.pyc
-    │   │   ├── apps.cpython-38.pyc
-    │   │   └── models.cpython-38.pyc
     │   ├── admin.py
     │   ├── apps.py
     │   ├── migrations
     │   │   ├── __init__.py
-    │   │   └── __pycache__
-    │   │       └── __init__.cpython-38.pyc
     │   ├── models.py
     │   ├── tests.py
     │   └── views.py
@@ -126,6 +119,7 @@ python manage.py startapp users
 INSTALLED_APPS = [
     'users',
 ]
+AUTH_USER_MODEL = "users.Users"
 
 # add models.py sourcecode
 # add views.py sourcecode
