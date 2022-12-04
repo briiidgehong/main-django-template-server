@@ -1,5 +1,4 @@
 # django-project
-django-project
 
 ## version
 ```
