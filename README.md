@@ -87,6 +87,11 @@ LOGOUT_URL = "rest_framework:logout"
 mkdir ./toy_project/users
 python manage.py startapp users ./toy_project/users
 
+# settings.py
+INSTALLED_APPS = [
+    'users',
+]
+
 # add models.py sourcecode
 # add views.py sourcecode
 # add users.urls.py sourcecode
