@@ -31,7 +31,7 @@ INSTALLED_APPS = [
 urlpatterns = [
     ...
     path('admin/', admin.site.urls), # default setting
-    path('api-auth/', include('rest_framework.urls')) # add
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')) # add
 ]
 
 admin/
@@ -43,6 +43,8 @@ api-auth/ logout/ [name='logout']
 ## add swagger
 ```
 drf-yasg==1.21.4
+
+# settings.py
 INSTALLED_APPS = [
    ...
    # required for serving swagger ui's css/js files
@@ -51,7 +53,7 @@ INSTALLED_APPS = [
    ...
 ]
 
-# for swagger setting
+# urls.py
 schema_view = get_schema_view(
    openapi.Info(
       title="Snippets API",
@@ -70,6 +72,13 @@ urlpatterns = [
    re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
    re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
+
+# settings.py
+# connect swagger login and rest-framework login url
+# 위에서 추가한 rest login url의 namespace를 사용하여 접근
+# path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+LOGIN_URL = "rest_framework:login"
+LOGOUT_URL = "rest_framework:logout"
 ```
 
 
