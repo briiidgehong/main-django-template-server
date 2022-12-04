@@ -125,4 +125,7 @@ AUTH_USER_MODEL = "users.Users"
 # add views.py sourcecode
 # add users.urls.py sourcecode
 # add urls.py sourcecode
+
+python manage.py makemigrations
+python manage.py migrate
 ```
