@@ -10,7 +10,7 @@ class UserViewSet(viewsets.ModelViewSet):
     swagger_tags = ["USERS"]
     queryset = User.objects.all().order_by("-date_joined")
     serializer_class = UsersSerializer
-    permission_classes = [permissions.IsAuthenticated]
     authentication_classes = [BasicAuthentication]
     # authentication_classes = [SessionAuthentication]
     # authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
