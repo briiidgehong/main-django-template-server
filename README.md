@@ -4,9 +4,9 @@ django-project
 ## version
 ```
 python 3.8
-django 3.2
-rest-framework
-drf-yasg
+Django==3.2
+djangorestframework==3.14.0
+drf-yasg==1.21.4
 ```
 
 ## start project
