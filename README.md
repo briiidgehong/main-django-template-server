@@ -1,6 +1,6 @@
 # django-project
 
-## version
+## - version
 ```
 python 3.8
 Django==3.2
@@ -8,7 +8,7 @@ djangorestframework==3.14.0
 drf-yasg==1.21.4
 ```
 
-## directory setting
+## - directory setting
 ```
 project folder 안에 다음을 각각 위치시킨다.
 이에 맞게 settings.py도 project prefix를 제거해주어야 한다.('toy_project.urls' -> 'urls')
@@ -38,7 +38,7 @@ project folder 안에 다음을 각각 위치시킨다.
 
 ```
 
-## start project
+## - start project
 ```
 git clone https://github.com/briiidgehong/django-project.git
 cd django-project
@@ -50,7 +50,7 @@ pip freeze > requirements.txt
 python manage.py runserver
 ```
 
-## add rest-framework
+## - add rest-framework
 ```
 pip install djangorestframework==3.14.0
 INSTALLED_APPS = [
@@ -69,7 +69,7 @@ api-auth/ logout/ [name='logout']
 
 ```
 
-## add swagger
+## - add swagger
 ```
 drf-yasg==1.21.4
 
@@ -111,7 +111,7 @@ LOGOUT_URL = "rest_framework:logout"
 ```
 
 
-## add users app (user-model-custom / using AbstractUser model)
+## - add users app (user-model-custom / using AbstractUser model)
 ```
 python manage.py startapp users 
 # settings.py
