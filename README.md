@@ -4,7 +4,8 @@
 ```
 python 3.8
 Django==3.2
-djangorestframework==3.14.0
+djangorestframework==3.13.0
+djangorestframework-simplejwt==5.2.2
 drf-yasg==1.21.4
 ```
 
@@ -129,3 +130,38 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 <img width="1618" alt="스크린샷 2022-12-04 오후 8 58 27" src="https://user-images.githubusercontent.com/73451727/205489116-012d394f-f351-4003-ac66-5349d95223bf.png">
+
+## - auth setting
+```
+1. BASIC TOKEN AUTH # django built-in func
+from rest_framework.authentication import BasicAuthentication
+class UserViewSet(viewsets.ModelViewSet):
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+```
+```
+2. SESSION - COOKIE AUTH # django built-in func
+from rest_framework.authentication import SessionAuthentication
+class UserViewSet(viewsets.ModelViewSet):
+    authentication_classes = [SessionAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+```
+```
+3. JWT TOEKN AUTH
+pip install djangorestframework-simplejwt==5.2.2
+INSTALLED_APPS = [
+    ...
+    'rest_framework_simplejwt',
+    ...
+]
+https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html
+from rest_framework_simplejwt.authentication import JWTAuthentication
+class UserViewSet(viewsets.ModelViewSet):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+```
+
+
+## - dockerize
+
+## - nginx setting
