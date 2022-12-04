@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Django migrations file
+**/migrations/[0-9]*.py
+.mypy_cache
