@@ -131,6 +131,14 @@ python manage.py migrate
 ```
 <img width="1618" alt="스크린샷 2022-12-04 오후 8 58 27" src="https://user-images.githubusercontent.com/73451727/205489116-012d394f-f351-4003-ac66-5349d95223bf.png">
 
+## - db conn
+```
+aws rds (postgresql) 사용
+
+
+```
+
+
 ## - auth setting
 ```
 1. BASIC TOKEN AUTH # django built-in func
