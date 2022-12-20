@@ -126,11 +126,11 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = "rest_framework:login"
-LOGOUT_URL = "rest_framework:logout"
 
 AUTH_USER_MODEL = "users.Users"
 
 SWAGGER_SETTINGS = {
     "DEFAULT_AUTO_SCHEMA_CLASS": "utils.CustomAutoSchema",
 }
+
+LOGIN_URL = "rest_framework:login"

@@ -19,11 +19,23 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from users import urls as users_url
+from django.conf.urls import url
+from django.contrib.auth import views as auth_views
+from django.conf import settings
+from rest_framework import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
-    path("api/users", include(users_url)),    
+    path("api/users/", include(users_url)),
+
+    # drf-yasg docs
+    # [LOGIN_URL]
+    # URL for the Django Login action when using USE_SESSION_AUTH.
+    # Default: django.conf.settings.LOGIN_URL
+    # [LOGOUT_URL]
+    # URL for the Django Logout action when using USE_SESSION_AUTH.
+    # Default: ‘/accounts/logout/’
+    path("accounts/", include("rest_framework.urls", namespace="rest_framework")),
 ]
 
 
