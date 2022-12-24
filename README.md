@@ -129,10 +129,14 @@ python manage.py migrate
 ```
 <img width="1618" alt="스크린샷 2022-12-04 오후 8 58 27" src="https://user-images.githubusercontent.com/73451727/205489116-012d394f-f351-4003-ac66-5349d95223bf.png">
 
-## - db conn
+## - dockerize
+```
+-
+```
+
+## - db setting
 ```
 1. docker-compose 에 postgresql 추가해서 사용
-
 2. aws rds (postgresql) 사용
 
 ```
