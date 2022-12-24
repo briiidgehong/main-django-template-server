@@ -153,11 +153,9 @@ pip freeze > requirements.txt
 
 
 
-## - db setting
+## - nginx setting
 ```
-1. docker-compose 에 postgresql 추가해서 사용
-2. aws rds (postgresql) 사용
-
+- 
 ```
 
 
