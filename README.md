@@ -41,8 +41,6 @@ project folder 안에 다음을 각각 위치시킨다.
 
 ## - start project
 ```
-git clone https://github.com/briiidgehong/django-project.git
-cd django-project
 conda create --name django-project python=3.8
 conda activate django-project
 pip install django==3.2
