@@ -133,8 +133,9 @@ python manage.py migrate
 
 ## - db conn
 ```
-aws rds (postgresql) 사용
+1. docker-compose 에 postgresql 추가해서 사용
 
+2. aws rds (postgresql) 사용
 
 ```
 
