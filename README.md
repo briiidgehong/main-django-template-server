@@ -226,8 +226,3 @@ class UserViewSet(viewsets.ModelViewSet):
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 ```
-
-
-## - dockerize
-
-## - nginx setting
