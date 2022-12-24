@@ -126,19 +126,70 @@ AUTH_USER_MODEL = "users.Users"
 
 python manage.py makemigrations
 python manage.py migrate
+python manage.py runserver
 ```
 <img width="1618" alt="스크린샷 2022-12-04 오후 8 58 27" src="https://user-images.githubusercontent.com/73451727/205489116-012d394f-f351-4003-ac66-5349d95223bf.png">
 
 ## - dockerize
 ```
--
+pip install gunicorn==20.1.0
+pip install psycopg2-binary==2.9.5
+pip freeze > requirements.txt
 ```
 
-## - db setting
 ```
-1. docker-compose 에 postgresql 추가해서 사용
-2. aws rds (postgresql) 사용
+# db setting
+1. local-db
+2. rds
+```
 
+### add ./toy_project/Dockerfile
+### add ./toy_project/entrypoint.sh
+
+### add ./docker-compose-local-db.yml
+### add ./docker-compose-rds.yml
+### add ./.env_local
+
+```
+# urls.py - static file 처리
+    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+    urlpatterns += staticfiles_urlpatterns()
+```
+
+```
+# settings.py
+
+import os
+ENV_WHOAMI = os.environ.get("WHOAMI")
+ENV_SECRET_KEY = os.environ.get("SECRET_KEY")
+
+> local-db setting
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": os.environ.get("POSTGRES_DB"),
+        "USER": os.environ.get("POSTGRES_USER"),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
+        "HOST": os.environ.get("POSTGRES_HOST"),
+        "PORT": os.environ.get("POSTGRES_PORT"),
+        "TEST": {"NAME": "test_database"},
+    }
+}
+
+> rdb setting
+
+```
+
+```
+docker-compose -f docker-compose-local-db.yml up
+0.0.0.0:8080/swagger
+```
+<img width="1175" alt="스크린샷 2022-12-24 오전 11 59 58" src="https://user-images.githubusercontent.com/73451727/209419033-4060711f-1f15-4657-98d6-93ee435ce61b.png">
+
+
+## - nginx setting
+```
+- 
 ```
 
 
