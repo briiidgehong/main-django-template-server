@@ -23,6 +23,7 @@ from django.conf.urls import url
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from rest_framework import urls
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,6 +39,7 @@ urlpatterns = [
     path("accounts/", include("rest_framework.urls", namespace="rest_framework")),
 ]
 
+urlpatterns += staticfiles_urlpatterns()
 
 # for swagger setting
 schema_view = get_schema_view(
