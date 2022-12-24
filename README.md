@@ -132,8 +132,26 @@ python manage.py runserver
 
 ## - dockerize
 ```
--
+pip install gunicorn==20.1.0
+pip install psycopg2-binary==2.9.5
+pip freeze > requirements.txt
 ```
+
+```
+# db setting
+1. local-db
+2. rds
+```
+
+### add ./toy_project/Dockerfile
+### add ./toy_project/entrypoint.sh
+
+### add ./docker-compose-local-db.yml
+### add ./docker-compose-rds.yml
+### add ./.env_local
+
+
+
 
 ## - db setting
 ```
