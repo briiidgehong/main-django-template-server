@@ -1,5 +1,8 @@
 version: '3.3'
 
+volumes:
+  django-project-localdb-storage:
+
 services:
   project:
     build:
@@ -17,8 +20,8 @@ services:
 
   postgres:
     image: postgres:13.0-alpine
-    # volumes:
-    #   - ./postgres_data:/var/lib/postgresql/data/
+    volumes:
+      - django-project-localdb-storage:/var/lib/postgresql/data/
     env_file: .env_local
     ports:
       - 5432:5432
