@@ -2,6 +2,8 @@ version: '3.3'
 
 volumes:
   django-project-localdb-storage:
+  django-static:
+
 
 services:
   project:
@@ -12,11 +14,22 @@ services:
       - .env_local
     volumes:
       - ./toy_project:/app/
+      - django-static:/static/
     restart: always
     ports:
       - 8080:8080
     depends_on:
       - postgres
+
+  nginx:
+    build:
+      context: ./nginx
+    volumes:
+      - django-static:/static/
+    ports:
+      - 80:80
+    depends_on:
+      - project
 
   postgres:
     image: postgres:13.0-alpine
