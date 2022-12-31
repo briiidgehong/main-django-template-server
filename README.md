@@ -192,35 +192,36 @@ docker-compose -f docker-compose-local-db.yml up
 
 
 ## - auth setting
-```
-1. BASIC TOKEN AUTH # django built-in func
-from rest_framework.authentication import BasicAuthentication
-class UserViewSet(viewsets.ModelViewSet):
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
-```
-<img width="514" alt="스크린샷 2022-12-05 오후 5 19 29" src="https://user-images.githubusercontent.com/73451727/205588260-186b68df-df07-4fd7-8a37-4bc41500f744.png">
-<img width="901" alt="스크린샷 2022-12-05 오후 5 17 49" src="https://user-images.githubusercontent.com/73451727/205588229-8bb41297-68a0-43e5-bfe9-9dc0b204a785.png">
 
+### 1. BASIC TOKEN AUTH # django built-in func
+> ```
+> from rest_framework.authentication import BasicAuthentication
+> class UserViewSet(viewsets.ModelViewSet):
+>     authentication_classes = [BasicAuthentication]
+>     permission_classes = [permissions.IsAuthenticated]
+> ```
+> <img width="514" alt="스크린샷 2022-12-05 오후 5 19 29" src="https://user-images.githubusercontent.com/73451727/205588260-186b68df-df07-4fd7-8a37-4bc41500f744.png">
+> <img width="901" alt="스크린샷 2022-12-05 오후 5 17 49" src="https://user-images.githubusercontent.com/73451727/205588229-8bb41297-68a0-43e5-bfe9-9dc0b204a785.png">
 
-```
-2. SESSION - COOKIE AUTH # django built-in func
-from rest_framework.authentication import SessionAuthentication
-class UserViewSet(viewsets.ModelViewSet):
-    authentication_classes = [SessionAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
-```
-```
-3. JWT TOEKN AUTH
-pip install djangorestframework-simplejwt==5.2.2
-INSTALLED_APPS = [
-    ...
-    'rest_framework_simplejwt',
-    ...
-]
-https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html
-from rest_framework_simplejwt.authentication import JWTAuthentication
-class UserViewSet(viewsets.ModelViewSet):
-    authentication_classes = [JWTAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
-```
+### 2. SESSION - COOKIE AUTH # django built-in func
+> ```
+> from rest_framework.authentication import SessionAuthentication
+> class UserViewSet(viewsets.ModelViewSet):
+>     authentication_classes = [SessionAuthentication]
+>     permission_classes = [permissions.IsAuthenticated]
+> ```
+
+### 3. JWT TOEKN AUTH
+> ```
+> pip install djangorestframework-simplejwt==5.2.2
+> INSTALLED_APPS = [
+>     ...
+>     'rest_framework_simplejwt',
+>     ...
+> ]
+> https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html
+> from rest_framework_simplejwt.authentication import JWTAuthentication
+> class UserViewSet(viewsets.ModelViewSet):
+>     authentication_classes = [JWTAuthentication]
+>     permission_classes = [permissions.IsAuthenticated]
+> ```
