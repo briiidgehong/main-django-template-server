@@ -7,5 +7,11 @@ router = routers.DefaultRouter()
 router.register(r"", views.UserViewSet)
 
 urlpatterns = [
-    path("", include(router.urls)),
+    url(r"^register", views.RegisterView.as_view()),
+    url(r"^session-login", views.SessionLoginView.as_view()),
+    url(r"^session-logout", views.SessionLogoutView.as_view()),
+    
+    # get jwt token
+    # refresh jwt token
 ]
+urlpatterns += router.urls

@@ -27,8 +27,6 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("api/users/", include(users_url)),
-
     # drf-yasg docs
     # [LOGIN_URL]
     # URL for the Django Login action when using USE_SESSION_AUTH.
@@ -37,6 +35,9 @@ urlpatterns = [
     # URL for the Django Logout action when using USE_SESSION_AUTH.
     # Default: ‘/accounts/logout/’
     path("accounts/", include("rest_framework.urls", namespace="rest_framework")),
+
+    # rest api
+    path("api/users/", include(users_url)),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
