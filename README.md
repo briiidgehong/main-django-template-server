@@ -188,9 +188,7 @@ docker-compose -f docker-compose-local-db.yml up
 
 
 ## - nginx setting
-```
-- 
-```
+[add nginx commit log](https://github.com/briiidgehong/django-project/commit/5d1a48f0853f3732e2edf76b73be813b20a0a240)
 
 
 ## - auth setting
